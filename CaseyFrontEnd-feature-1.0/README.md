@@ -22,3 +22,7 @@ If you'd like to build the app for production:
 npm run build
 
 This will output a minified version of the app in the build directory, ready to be deployed to any static host or containerized backend.
+
+
+Deploy to Cloudflare Worker -
+
