@@ -1,0 +1,213 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  .login-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .caseys-logo {
+    width: 70px;
+    height: 50px;
+  }
+  
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .identity-portal {
+    font-family: 'Brandon Text', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+  }
+  
+  .divider {
+    border: 0;
+    height: 1px;
+    background: #d3d3d3;
+    margin: 1rem 0;
+  }
+  
+  h2 {
+    font-family: 'Brandon Text', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    display: block;
+    text-align: left;
+    font-family: 'Brandon Text', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #020000;
+    margin-bottom: 0.5rem;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Brandon Text', sans-serif;
+    font-size: 0.85rem;
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
+    border-color: #0066cc;
+  }
+  
+  .password-container {
+    position: relative;
+  }
+  
+  .eye-icon {
+    position: absolute;
+    right: 12px; // Adjusted to match the screenshot
+    top: 40%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    font-size: 0.85rem; // Slightly smaller to match the screenshot
+  }
+  
+  .checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .checkbox input {
+    width: auto;
+    margin-right: 0.5rem;
+  }
+  
+  .checkbox label {
+    font-family: 'Brandon Text', sans-serif;
+    font-size: 0.75rem;
+    font-weight: normal;
+    color: #333;
+  }
+  
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Brandon Text Medium', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #005bb5;
+  }
+  
+  .links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .links a {
+    font-family: 'Brandon Text', sans-serif;
+    font-size: 0.75rem;
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+  }
+  .unlock-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1; // Tight vertical spacing
+    color: #007dc1;
+    font-size: 20px;
+  
+    svg {
+      font-size: 1.5rem; // Adjust icon size
+    }
+  }
+  .outer-circle {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #979ea5; /* border color */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    margin: 0 auto; 
+  }
+  
+  
+  .user-icon {
+    width: 90px;
+    height: 90px;
+    background-color: #dff4ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+  }
+  
+  .user-icon span {
+    font-size: 2rem;
+  }
+  
+  .username-display {
+    font-family: 'Brandon Text', sans-serif;
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  .profile-icon {
+    color: #666;
+  }
+  
+  .error {
+    color: #d32f2f;
+    font-family: 'Brandon Text', sans-serif;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+  }
+  
+  .password-section {
+    position: relative;
+  }

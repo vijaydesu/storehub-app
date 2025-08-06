@@ -1,0 +1,31 @@
+{
+    "users": [
+      { "username": "sm1", "password": "pass123", "role": "store manager", "email": "sample@email.com", "name" : "Store Manager 1" },
+      { "username": "sm2", "password": "pass123", "role": "store manager", "email": "sm2@caseys.com", "name" : "Store Manager 2" },
+      { "username": "sm3", "password": "pass123", "role": "store manager", "email": "sm3@caseys.com" , "name" : "Store Manager 3" },
+      { "username": "sm4", "password": "pass123", "role": "store manager", "email": "sm4@caseys.com" , "name" : "Store Manager 4" },
+      { "username": "sm5", "password": "pass123", "role": "store manager", "email": "sm5@caseys.com", "name" : "Store Manager 5" },
+      
+      { "username": "sa1", "password": "pass123", "role": "team member", "email": "sa1@caseys.com" , "name" : "Store Associate 1" },
+      { "username": "sa2", "password": "pass123", "role": "team member", "email": "sa2@caseys.com", "name" : "Store Associate 2" },
+      
+      { "username": "adam.badgley", "password": "pass123", "role": "store manager", "email": "adam.badgley@caseys.com" , "name" : "Adam Badgley" },
+      { "username": "pj.oluic", "password": "pass123", "role": "store manager", "email": "pj.oluic@caseys.com", "name" : "PJ Oluic" },
+      { "username": "shari.giudicessi", "password": "pass123", "role": "store manager", "email": "shari.giudicessi@caseys.com", "name" : "Shari Giudicessi" },
+      
+      { "username": "kapi1", "password": "pass123", "role": "store manager", "email": "kapi1@caseys.com", "name" : "Kapi 1" },
+      { "username": "kapi2", "password": "pass123", "role": "store manager", "email": "kapi2@caseys.com", "name" : "Kapi 2" },
+      { "username": "kapi3", "password": "pass123", "role":"store manager", "email": "kapi3@caseys.com", "name" : "Kapi 3" },
+      { "username": "kapi4", "password": "pass123", "role": "store manager", "email": "kapi4@caseys.com" , "name" : "Kapi 4" },
+      { "username": "kapi5", "password": "pass123", "role": "store manager", "email": "kapi5@caseys.com" , "name" : "Kapi 5" },
+      
+      
+      { "username": "tester1", "password": "pass123", "role": "store manager", "email": "tester1@caseys.com", "name" : "Tester 1" },
+      { "username": "tester2", "password": "pass123", "role": "team member", "email": "tester2@caseys.com", "name" : "Tester 2" },
+      
+      { "username": "user18", "password": "pass123", "role": "team member", "email": "user18@caseys.com" , "name" : "User 1" },
+      { "username": "user19", "password": "pass123", "role": "team member", "email": "user19@caseys.com" , "name" : "User 2" },
+      { "username": "user20", "password": "pass123", "role": "team member", "email": "user20@caseys.com", "name" : "User 3" }
+    ]
+  }
+  

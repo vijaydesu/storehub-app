@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5f74321e.css",
+    "main.js": "/static/js/main.be6d4ae7.js",
+    "static/media/todays-news.png": "/static/media/todays-news.c6b2e382c0ebe2f44e19.png",
+    "static/media/caseys_logo.jpg": "/static/media/caseys_logo.898a3a8e7a1c7fcb4c68.jpg",
+    "static/media/loader-message.gif": "/static/media/loader-message.6451421444f4e762550b.gif",
+    "static/media/weathericons-regular-webfont.woff": "/static/media/weathericons-regular-webfont.371511ddba5fdac0538c.woff",
+    "static/media/otter-dead-icon.png": "/static/media/otter-dead-icon.7a8e33d068daa824a437.png",
+    "static/media/BrandonText-Bold.woff": "/static/media/BrandonText-Bold.0399d36df9c3586dbdee.woff",
+    "static/media/BrandonText-Medium.woff": "/static/media/BrandonText-Medium.e6dc07c0ab4a26ed3402.woff",
+    "static/media/BrandonText-Regular.woff": "/static/media/BrandonText-Regular.a6384f08badb42a9b517.woff",
+    "static/media/otter-profile-icon.svg": "/static/media/otter-profile-icon.5de1529870368d8745e461fdd58df167.svg",
+    "index.html": "/index.html",
+    "main.5f74321e.css.map": "/static/css/main.5f74321e.css.map",
+    "main.be6d4ae7.js.map": "/static/js/main.be6d4ae7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5f74321e.css",
+    "static/js/main.be6d4ae7.js"
+  ]
+}

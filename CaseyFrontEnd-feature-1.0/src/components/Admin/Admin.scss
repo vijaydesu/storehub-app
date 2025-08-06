@@ -1,0 +1,1295 @@
+/* Import Brandon Text font (consistent with Header.scss) */
+@font-face {
+    font-family: 'Brandon Text';
+    src: url('../../assets/fonts/BrandonText-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brandon Text Bold';
+    src: url('../../assets/fonts/BrandonText-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brandon Text Medium';
+    src: url('../../assets/fonts/BrandonText-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admin-page {
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Brandon Text', sans-serif;
+    min-width: 320px;
+    box-sizing: border-box;
+
+    .admin-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        .home-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            color: #E10600;
+            border-radius: 50%;
+            padding: 0;
+            font-size: 20px;
+            font-family: 'Brandon Text', sans-serif;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            background: #fff;
+            border: none;
+            flex-shrink: 0;
+
+            svg {
+                font-size: 20px;
+            }
+
+            &:hover {
+                transform: scale(1.1);
+                background: #f8f9fa;
+            }
+        }
+
+        .view-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+
+            .view-button {
+                padding: 8px 16px;
+                border-radius: 4px;
+                font-family: 'Brandon Text', sans-serif;
+                font-size: 14px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                background: #f5f5f5;
+                border: 1px solid #ccc;
+                color: #333;
+                white-space: nowrap;
+                flex-shrink: 0;
+
+                &.active {
+                    background-color: #E10600;
+                    color: white;
+                    border: none;
+                }
+
+                &:hover:not(.active) {
+                    background-color: #e0e0e0;
+                }
+            }
+        }
+    }
+
+    .content-section {
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+
+        .upload-section,
+        .review-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+            animation: fadeIn 0.5s ease-in-out;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+
+            &.hidden {
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
+
+            &.visible {
+                opacity: 1;
+                visibility: visible;
+                position: relative;
+            }
+
+            h2 {
+                font-size: 18px;
+                font-family: 'Brandon Text', sans-serif;
+                margin-bottom: 20px;
+                color: #2d3748;
+            }
+
+            p {
+                color: #666;
+                font-size: 14px;
+                line-height: 20px;
+                margin-bottom: 20px;
+                word-wrap: break-word;
+            }
+        }
+
+        .upload-section {
+            .upload-area {
+                border: 2px dashed #ccc;
+                border-radius: 8px;
+                padding: 20px;
+                text-align: center;
+                margin-bottom: 20px;
+                cursor: pointer;
+                transition: border-color 0.3s ease;
+
+                &:hover {
+                    border-color: #E10600;
+                }
+
+                .upload-icon {
+                    font-size: 24px;
+                    margin-bottom: 10px;
+                    color: #666;
+                }
+
+                .upload-text {
+                    color: #666;
+                    font-size: 14px;
+                    margin: 0;
+                }
+
+                .upload-supported {
+                    color: #999;
+                    font-size: 12px;
+                    margin: 0;
+                }
+
+                .file-input {
+                    display: none;
+                }
+            }
+
+            .form-section {
+                h3 {
+                    font-size: 16px;
+                    font-weight: 500;
+                    margin-bottom: 10px;
+                    color: #333;
+                }
+
+                .file-info {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    flex-wrap: wrap;
+                    gap: 8px;
+
+                    .file-name {
+                        flex: 1;
+                        font-size: 14px;
+                        color: #333;
+                        min-width: 0;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    .delete-button {
+                        background: none;
+                        border: none;
+                        cursor: pointer;
+                        flex-shrink: 0;
+                    }
+
+                    .action-icon {
+                        font-size: 22px;
+                        color: #E10600;
+                        transition: transform 0.3s ease-in-out;
+
+                        &:hover {
+                            transform: scale(1.1);
+                            color: #b80500;
+                        }
+                    }
+                }
+
+                .doc-title-input,
+                .category-select {
+                    width: 100%;
+                    padding: 8px;
+                    margin-bottom: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    font-family: 'Brandon Text', sans-serif;
+                    font-size: 14px;
+                    color: #333;
+                    box-sizing: border-box;
+
+                    &:focus {
+                        outline: none;
+                        border-color: #E10600;
+                        box-shadow: 0 0 4px rgba(231, 76, 60, 0.3);
+                    }
+                }
+
+                .category-select {
+                    appearance: none;
+                    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%23666" d="M2 4h8L6 8z"/></svg>') no-repeat right 8px center;
+                    background-size: 12px;
+                }
+            }
+
+            .action-buttons {
+                display: flex;
+                justify-content: center; /* Center the buttons */
+                margin-top: 20px;
+                gap: 10px;
+                flex-wrap: nowrap; /* Prevent wrapping to keep buttons side by side */
+
+                .cancel-button,
+                .save-button {
+                    width: 100px; /* Set fixed width to 100px */
+                    padding: 6px 12px; /* Reduced padding for smaller size */
+                    border-radius: 4px;
+                    font-family: 'Brandon Text', sans-serif;
+                    font-size: 13px; /* Slightly smaller font size */
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    text-align: center;
+                }
+
+                .cancel-button {
+                    border: 1px solid #ccc;
+                    background: none;
+                    color: #333;
+
+                    &:hover {
+                        background-color: #f5f5f5;
+                    }
+                }
+
+                .save-button {
+                    background-color: #E10600;
+                    color: white;
+                    border: none;
+
+                    &:hover {
+                        background-color: #c0392b;
+                    }
+                }
+            }
+        }
+
+        // Define category colors
+        $onboarding-color: #28a745;
+        $training-color: #666;
+        $prepared-color: #dc3545;
+
+        $onboarding-bg: #F2F9F2;
+        $training-bg: #f5f5f5;
+        $prepared-bg: #fff5f5;
+
+        .review-section {
+            h2 {
+                margin-bottom: 20px;
+                color: #4a4a4a;
+                font-size: 18px;
+                font-weight: 500;
+            }
+
+            .search-bar {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                gap: 10px;
+
+                input {
+                    flex: 1;
+                    padding: 10px 16px;
+                    border: 1px solid #d3d3d3;
+                    border-radius: 8px;
+                    font-family: 'Brandon Text', sans-serif;
+                    font-size: 14px;
+                    color: #333;
+                    background-color: #fff;
+
+                    &:focus {
+                        outline: none;
+                        border-color: #E10600;
+                        box-shadow: 0 0 4px rgba(231, 76, 60, 0.3);
+                    }
+
+                    &::placeholder {
+                        color: #999;
+                    }
+                }
+
+                button {
+                    padding: 0;
+                    background-color: #E10600;
+                    color: white;
+                    border: none;
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+
+                    &:hover {
+                        background-color: #c0392b;
+                    }
+
+                    svg {
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            .filter-buttons {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 20px;
+                flex-wrap: wrap;
+
+                .filter-btn {
+                    padding: 8px 16px;
+                    border: 1px solid #d3d3d3;
+                    border-radius: 20px;
+                    font-family: 'Brandon Text', sans-serif;
+                    font-size: 14px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    background: transparent;
+                    color: #666;
+
+                    &.active {
+                        border: none;
+                        color: white;
+                    }
+
+                    &.onboarding.active {
+                        background-color: $onboarding-color;
+                    }
+
+                    &.training.active {
+                        background-color: $training-color;
+                    }
+
+                    &.prepared.active {
+                        background-color: $prepared-color;
+                    }
+
+                    &:hover:not(.active) {
+                        background-color: #f5f5f5;
+                    }
+                }
+            }
+
+            .empty-state {
+                text-align: center;
+                color: #666;
+                font-size: 16px;
+
+                p {
+                    margin: 0;
+                }
+            }
+
+            .documents-list {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .document-item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 12px 16px;
+                    background-color: #ffffff;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        background-color: #f5f5f5;
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .doc-info {
+                        display: flex;
+                        flex-direction: column;
+                        flex: 1;
+
+                        .doc-title {
+                            font-family: 'Brandon Text', sans-serif;
+                            font-size: 16px;
+                            font-weight: 700;
+                            color: #574150;
+                            margin-bottom: 4px;
+                        }
+
+                        .doc-category {
+                            font-family: 'Brandon Text', sans-serif;
+                            font-size: 14px;
+                            font-weight: 450;
+                            line-height: 18px;
+                            letter-spacing: 0%;
+                            border-radius: 10px;
+                            width: 90px;
+                            padding: 5px;
+                            display: inline-block;
+
+                            &.onboarding {
+                                color: $onboarding-color;
+                                background-color: $onboarding-bg;
+                            }
+
+                            &.training {
+                                color: $training-color;
+                                background-color: $training-bg;
+                            }
+
+                            &.prepared {
+                                color: $prepared-color;
+                                background-color: $prepared-bg;
+                            }
+                        }
+                    }
+
+                    .doc-actions {
+                        display: flex;
+                        gap: 10px;
+
+                        .action-button {
+                            background: none;
+                            border: none;
+                            cursor: pointer;
+
+                            .action-icon {
+                                font-size: 18px;
+                                transition: transform 0.3s ease-in-out;
+                            }
+
+                            &.edit-button .action-icon {
+                                color: #436EA2;
+
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+
+                            &.delete-button .action-icon {
+                                color: #E10600;
+
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+                        }
+                    }
+
+                    .edit-form {
+                        width: 100%;
+                        padding: 10px 0;
+
+                        h3 {
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: #4a4a4a;
+                            margin-bottom: 15px;
+                        }
+
+                        .form-group {
+                            position: relative;
+                            margin-bottom: 16px;
+
+                            .floating-label {
+                                position: absolute;
+                                top: -10px;
+                                left: 10px;
+                                background: #fff;
+                                padding: 0 4px;
+                                font-size: 12px;
+                                color: #666;
+                                font-family: 'Brandon Text', sans-serif;
+                                z-index: 1;
+                                span {
+                                    color: #E10600;
+                                }
+                            }
+
+                            .edit-input {
+                                width: 100%;
+                                padding: 10px;
+                                border: 1px solid #d3d3d3;
+                                border-radius: 8px;
+                                font-family: 'Brandon Text', sans-serif;
+                                font-size: 14px;
+                                color: #333;
+
+                                &:focus {
+                                    outline: none;
+                                    border-color: #E10600;
+                                    box-shadow: 0 0 4px rgba(231, 76, 60, 0.3);
+                                }
+                            }
+                        }
+
+                        .edit-buttons {
+                            display: flex;
+                            gap: 10px;
+                            margin-bottom: 20px;
+                            flex-wrap: wrap;
+
+                            .edit-btn {
+                                padding: 8px 16px;
+                                border: 1px solid #d3d3d3;
+                                border-radius: 20px;
+                                font-family: 'Brandon Text', sans-serif;
+                                font-size: 14px;
+                                cursor: pointer;
+                                transition: all 0.3s ease;
+                                background: transparent;
+                                color: #666;
+
+                                &.active {
+                                    border: none;
+                                    color: white;
+                                }
+
+                                &.onboarding.active {
+                                    background-color: $onboarding-color;
+                                }
+
+                                &.training.active {
+                                    background-color: $training-color;
+                                }
+
+                                &.prepared.active {
+                                    background-color: $prepared-color;
+                                }
+
+                                &:hover:not(.active) {
+                                    background-color: #f5f5f5;
+                                }
+                            }
+                        }
+
+                        .versions-section {
+                            margin-bottom: 20px;
+
+                            label {
+                                font-size: 14px;
+                                color: #666;
+                                margin-bottom: 8px;
+                                display: block;
+                            }
+
+                            .version-item {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                padding: 8px 0;
+
+                                span {
+                                    font-size: 14px;
+                                    color: #333;
+                                }
+
+                                .delete-version-btn {
+                                    background: none;
+                                    border: none;
+                                    cursor: pointer;
+                                    color: #E10600;
+
+                                    svg {
+                                        font-size: 16px;
+                                    }
+                                }
+                            }
+
+                            .add-version-btn {
+                                background: none;
+                                border: none;
+                                color: #007bff;
+                                font-size: 14px;
+                                cursor: pointer;
+                                padding: 0;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+
+                        .edit-actions {
+                            display: flex;
+                            justify-content: space-between;
+                            gap: 10px;
+
+                            .delete-doc-btn {
+                                padding: 8px 16px;
+                                border: 1px solid #d3d3d3;
+                                border-radius: 8px;
+                                font-family: 'Brandon Text', sans-serif;
+                                font-size: 14px;
+                                cursor: pointer;
+                                background: transparent;
+                                color: #666;
+
+                                &:hover {
+                                    background-color: #f5f5f5;
+                                }
+                            }
+
+                            .save-edit-btn {
+                                padding: 8px 16px;
+                                border-radius: 8px;
+                                font-family: 'Brandon Text', sans-serif;
+                                font-size: 14px;
+                                cursor: pointer;
+                                background-color: #E10600;
+                                color: white;
+                                border: none;
+
+                                &:hover {
+                                    background-color: #c0392b;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 15px;
+        max-width: 100%;
+
+        .admin-header {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+
+            .home-button {
+                width: 32px;
+                height: 32px;
+
+                svg {
+                    font-size: 18px;
+                }
+            }
+
+            .view-buttons {
+                gap: 8px;
+                flex-wrap: nowrap;
+
+                .view-button {
+                    padding: 6px 12px;
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .content-section {
+            .upload-section,
+            .review-section {
+                padding: 15px;
+
+                h2 {
+                    font-size: 16px;
+                }
+
+                p {
+                    font-size: 13px;
+                    line-height: 18px;
+                }
+
+                .upload-area {
+                    padding: 15px;
+
+                    .upload-icon {
+                        font-size: 20px;
+                    }
+
+                    .upload-text {
+                        font-size: 13px;
+                    }
+
+                    .upload-supported {
+                        font-size: 11px;
+                    }
+                }
+
+                .form-section {
+                    h3 {
+                        font-size: 14px;
+                    }
+
+                    .file-info {
+                        .file-name {
+                            font-size: 13px;
+                        }
+
+                        .action-icon {
+                            font-size: 18px;
+                        }
+                    }
+
+                    .doc-title-input,
+                    .category-select {
+                        font-size: 13px;
+                        padding: 6px;
+                    }
+                }
+
+                .action-buttons {
+                    gap: 8px;
+
+                    .cancel-button,
+                    .save-button {
+                        width: 90px; /* Slightly smaller for medium screens */
+                        padding: 5px 10px;
+                        font-size: 12px;
+                    }
+                }
+
+                .search-bar {
+                    input {
+                        font-size: 13px;
+                        padding: 6px 10px;
+                    }
+
+                    button {
+                        width: 36px;
+                        height: 36px;
+
+                        svg {
+                            font-size: 16px;
+                        }
+                    }
+                }
+
+                .filter-buttons {
+                    gap: 8px;
+
+                    .filter-btn {
+                        padding: 6px 12px;
+                        font-size: 13px;
+                    }
+                }
+
+                .documents-list {
+                    .document-item {
+                        padding: 10px;
+                        gap: 8px;
+
+                        .doc-title {
+                            font-size: 13px;
+                        }
+
+                        .doc-category {
+                            font-size: 11px;
+                        }
+
+                        .doc-actions {
+                            gap: 12px;
+
+                            .action-icon {
+                                font-size: 16px;
+                            }
+                        }
+
+                        .edit-form {
+                            h3 {
+                                font-size: 14px;
+                            }
+
+                            .form-group {
+                                .floating-label {
+                                    font-size: 11px;
+                                }
+
+                                .edit-input {
+                                    font-size: 13px;
+                                    padding: 8px;
+                                }
+                            }
+
+                            .edit-buttons {
+                                .edit-btn {
+                                    padding: 6px 12px;
+                                    font-size: 13px;
+                                }
+                            }
+
+                            .versions-section {
+                                label {
+                                    font-size: 13px;
+                                }
+
+                                .version-item {
+                                    span {
+                                        font-size: 13px;
+                                    }
+
+                                    .delete-version-btn {
+                                        svg {
+                                            font-size: 14px;
+                                        }
+                                    }
+                                }
+
+                                .add-version-btn {
+                                    font-size: 13px;
+                                }
+                            }
+
+                            .edit-actions {
+                                .delete-doc-btn,
+                                .save-edit-btn {
+                                    padding: 6px 12px;
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .empty-state {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 10px;
+
+        .admin-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+
+            .home-button {
+                width: 30px;
+                height: 30px;
+
+                svg {
+                    font-size: 16px;
+                }
+            }
+
+            .view-buttons {
+                width: 100%;
+                justify-content: center;
+                gap: 6px;
+                flex-wrap: nowrap;
+
+                .view-button {
+                    flex: 1;
+                    padding: 5px 8px;
+                    font-size: 12px;
+                    text-align: center;
+                }
+            }
+        }
+
+        .content-section {
+            .upload-section,
+            .review-section {
+                padding: 10px;
+
+                h2 {
+                    font-size: 14px;
+                }
+
+                p {
+                    font-size: 12px;
+                    line-height: 16px;
+                }
+
+                .upload-area {
+                    padding: 10px;
+
+                    .upload-icon {
+                        font-size: 18px;
+                    }
+
+                    .upload-text {
+                        font-size: 12px;
+                    }
+
+                    .upload-supported {
+                        font-size: 10px;
+                    }
+                }
+
+                .form-section {
+                    h3 {
+                        font-size: 13px;
+                    }
+
+                    .file-info {
+                        .file-name {
+                            font-size: 12px;
+                        }
+
+                        .action-icon {
+                            font-size: 16px;
+                        }
+                    }
+
+                    .doc-title-input,
+                    .category-select {
+                        font-size: 12px;
+                        padding: 5px;
+                    }
+                }
+
+                .action-buttons {
+                    gap: 6px;
+
+                    .cancel-button,
+                    .save-button {
+                        width: 80px; /* Smaller for small screens */
+                        padding: 4px 8px;
+                        font-size: 11px;
+                    }
+                }
+
+                .search-bar {
+                    input {
+                        font-size: 12px;
+                        padding: 5px 8px;
+                    }
+
+                    button {
+                        width: 32px;
+                        height: 32px;
+
+                        svg {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .filter-buttons {
+                    gap: 6px;
+
+                    .filter-btn {
+                        padding: 5px 10px;
+                        font-size: 12px;
+                    }
+                }
+
+                .documents-list {
+                    .document-item {
+                        padding: 8px;
+                        gap: 6px;
+
+                        .doc-title {
+                            font-size: 12px;
+                        }
+
+                        .doc-category {
+                            font-size: 10px;
+                        }
+
+                        .doc-actions {
+                            gap: 10px;
+
+                            .action-icon {
+                                font-size: 14px;
+                            }
+                        }
+
+                        .edit-form {
+                            h3 {
+                                font-size: 13px;
+                            }
+
+                            .form-group {
+                                .floating-label {
+                                    font-size: 10px;
+                                }
+
+                                .edit-input {
+                                    font-size: 12px;
+                                    padding: 6px;
+                                }
+                            }
+
+                            .edit-buttons {
+                                .edit-btn {
+                                    padding: 5px 10px;
+                                    font-size: 12px;
+                                }
+                            }
+
+                            .versions-section {
+                                label {
+                                    font-size: 12px;
+                                }
+
+                                .version-item {
+                                    span {
+                                        font-size: 12px;
+                                    }
+
+                                    .delete-version-btn {
+                                        svg {
+                                            font-size: 12px;
+                                        }
+                                    }
+                                }
+
+                                .add-version-btn {
+                                    font-size: 12px;
+                                }
+                            }
+
+                            .edit-actions {
+                                .delete-doc-btn,
+                                .save-edit-btn {
+                                    padding: 5px 10px;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .empty-state {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 360px) {
+        padding: 8px;
+
+        .admin-header {
+            gap: 8px;
+
+            .home-button {
+                width: 28px;
+                height: 28px;
+
+                svg {
+                    font-size: 14px;
+                }
+            }
+
+            .view-buttons {
+                gap: 4px;
+
+                .view-button {
+                    padding: 4px 6px;
+                    font-size: 11px;
+                }
+            }
+        }
+
+        .content-section {
+            .upload-section,
+            .review-section {
+                padding: 8px;
+
+                h2 {
+                    font-size: 13px;
+                }
+
+                p {
+                    font-size: 11px;
+                    line-height: 15px;
+                }
+
+                .upload-area {
+                    padding: 8px;
+
+                    .upload-icon {
+                        font-size: 16px;
+                    }
+
+                    .upload-text {
+                        font-size: 11px;
+                    }
+
+                    .upload-supported {
+                        font-size: 9px;
+                    }
+                }
+
+                .form-section {
+                    h3 {
+                        font-size: 12px;
+                    }
+
+                    .file-info {
+                        .file-name {
+                            font-size: 11px;
+                        }
+
+                        .action-icon {
+                            font-size: 14px;
+                        }
+                    }
+
+                    .doc-title-input,
+                    .category-select {
+                        font-size: 11px;
+                        padding: 4px;
+                    }
+                }
+
+                .action-buttons {
+                    gap: 4px;
+
+                    .cancel-button,
+                    .save-button {
+                        width: 80px; /* Smaller for very small screens */
+                        padding: 4px 8px;
+                        font-size: 11px;
+                    }
+                }
+
+                .search-bar {
+                    input {
+                        font-size: 11px;
+                        padding: 4px 6px;
+                    }
+
+                    button {
+                        width: 30px;
+                        height: 30px;
+
+                        svg {
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .filter-buttons {
+                    gap: 4px;
+
+                    .filter-btn {
+                        padding: 4px 8px;
+                        font-size: 11px;
+                    }
+                }
+
+                .documents-list {
+                    .document-item {
+                        padding: 6px;
+                        gap: 4px;
+
+                        .doc-title {
+                            font-size: 11px;
+                        }
+
+                        .doc-category {
+                            font-size: 9px;
+                        }
+
+                        .doc-actions {
+                            gap: 8px;
+
+                            .action-icon {
+                                font-size: 12px;
+                            }
+                        }
+
+                        .edit-form {
+                            h3 {
+                                font-size: 12px;
+                            }
+
+                            .form-group {
+                                .floating-label {
+                                    font-size: 9px;
+                                }
+
+                                .edit-input {
+                                    font-size: 11px;
+                                    padding: 5px;
+                                }
+                            }
+
+                            .edit-buttons {
+                                .edit-btn {
+                                    padding: 4px 8px;
+                                    font-size: 11px;
+                                }
+                            }
+
+                            .versions-section {
+                                label {
+                                    font-size: 11px;
+                                }
+
+                                .version-item {
+                                    span {
+                                        font-size: 11px;
+                                    }
+
+                                    .delete-version-btn {
+                                        svg {
+                                            font-size: 10px;
+                                        }
+                                    }
+                                }
+
+                                .add-version-btn {
+                                    font-size: 11px;
+                                }
+                            }
+
+                            .edit-actions {
+                                .delete-doc-btn,
+                                .save-edit-btn {
+                                    padding: 4px 8px;
+                                    font-size: 11px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .empty-state {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,456 @@
+.weather-widget.compact {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 0.7rem; /* Further reduced base font size */
+  display: flex;
+  flex-direction: column;
+
+  .widget-glass {
+    background: white;
+    border-radius: 5px; /* Smaller border-radius */
+    padding: 0.4rem; /* Further reduced padding */
+    flex: 1;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem; /* Further reduced gap */
+    overflow: hidden; /* Prevent scrolling */
+  }
+
+  .city-input {
+    width: 95%;
+    padding: 4px; /* Further reduced padding */
+    margin-bottom: 0.15rem; /* Further reduced margin */
+    border: none;
+    border-radius: 5px;
+    font-size: 0.65rem; /* Smaller font size */
+    outline: none;
+    background: aliceblue;
+    color: black;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  .error,
+  .loading {
+    background-color: rgba(255, 0, 0, 0.2);
+    color: black;
+    padding: 0.1rem; /* Further reduced padding */
+    border-radius: 3px;
+    margin-bottom: 0.15rem;
+    text-align: center;
+    font-size: 0.55rem; /* Smaller font size */
+  }
+
+  .weather-header {
+    text-align: center;
+    margin-bottom: 0.15rem; /* Further reduced margin */
+
+    h3 {
+      font-size: 0.8rem; /* Smaller font size */
+      margin: 0;
+    }
+
+    .current-time {
+      margin: 0.05rem 0 0;
+      opacity: 0.8;
+      font-size: 0.45rem; /* Smaller font size */
+    }
+  }
+
+  .current-weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.15rem; /* Further reduced margin */
+
+    .main-info {
+      display: flex;
+      align-items: center;
+      gap: 0.15rem; /* Further reduced gap */
+      margin-bottom: 0.15rem;
+
+      h2 {
+        font-size: 1.2rem; /* Smaller font size */
+        margin: 0;
+      }
+
+      .desc {
+        font-size: 0.65rem; /* Smaller font size */
+        text-transform: capitalize;
+        margin: 0.05rem 0;
+        opacity: 0.9;
+      }
+
+      .feels-like {
+        font-size: 0.55rem; /* Smaller font size */
+        margin: 0;
+        opacity: 0.8;
+      }
+
+      .wi {
+        color: #ffd700;
+        font-size: 1.3rem; /* Smaller icon size */
+      }
+
+      .wi-day-sunny,
+      .wi-night-clear {
+        color: #ffeb3b;
+      }
+
+      .wi-cloud,
+      .wi-cloudy {
+        color: #b0bec5;
+      }
+
+      .wi-rain,
+      .wi-showers {
+        color: #42a5f5;
+      }
+
+      .wi-thunderstorm {
+        color: #ab47bc;
+      }
+
+      .wi-snow {
+        color: #e0f7fa;
+      }
+
+      .wi-fog {
+        color: #78909c;
+      }
+    }
+
+    .detailed-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.15rem; /* Further reduced gap */
+      width: 97%;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      padding: 0.15rem; /* Further reduced padding */
+      font-size: 0.55rem; /* Smaller font size */
+
+      .info-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.05rem; /* Further reduced gap */
+        text-align: center;
+
+        span {
+          font-weight: bold;
+          font-size: 0.55rem; /* Smaller font size */
+        }
+
+        p {
+          margin: 0;
+          font-size: 0.45rem; /* Smaller font size */
+          opacity: 0.8;
+        }
+
+        .wi {
+          color: #ffd700;
+          font-size: 0.7rem; /* Smaller icon size */
+        }
+
+        .wi-humidity {
+          color: #4fc3f7;
+        }
+
+        .wi-strong-wind {
+          color: #81d4fa;
+        }
+
+        .wi-barometer {
+          color: #ff8a65;
+        }
+
+        .wi-horizon {
+          color: #ffca28;
+        }
+
+        .wi-sunrise {
+          color: #ffeb3b;
+        }
+
+        .wi-sunset {
+          color: #ff9800;
+        }
+      }
+    }
+  }
+
+  /* Responsive Adjustments for Weather Widget */
+  /* Extra Large Screens (xl: >1200px) */
+  @media (min-width: 1201px) {
+    font-size: 0.75rem;
+
+    .widget-glass {
+      padding: 0.5rem;
+    }
+
+    .city-input {
+      font-size: 0.7rem;
+      padding: 5px;
+    }
+
+    .weather-header h3 {
+      font-size: 0.9rem;
+    }
+
+    .weather-header .current-time {
+      font-size: 0.5rem;
+    }
+
+    .current-weather .main-info {
+      .wi {
+        font-size: 1.6rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      .desc {
+        font-size: 0.7rem;
+      }
+      .feels-like {
+        font-size: 0.6rem;
+      }
+    }
+
+    .detailed-info {
+      font-size: 0.6rem;
+
+      .info-item {
+        .wi {
+          font-size: 0.8rem;
+        }
+        span {
+          font-size: 0.6rem;
+        }
+        p {
+          font-size: 0.5rem;
+        }
+      }
+    }
+  }
+
+  /* Large Screens (lg: 769px - 1200px) */
+  @media (max-width: 1200px) {
+    font-size: 0.65rem;
+
+    .widget-glass {
+      padding: 0.4rem;
+    }
+
+    .city-input {
+      font-size: 0.6rem;
+      padding: 4px;
+    }
+
+    .weather-header h3 {
+      font-size: 0.8rem;
+    }
+
+    .weather-header .current-time {
+      font-size: 0.5rem;
+    }
+
+    .current-weather .main-info {
+      .wi {
+        font-size: 1.4rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      .desc {
+        font-size: 0.65rem;
+      }
+      .feels-like {
+        font-size: 0.55rem;
+      }
+    }
+
+    .detailed-info {
+      font-size: 0.55rem;
+
+      .info-item {
+        .wi {
+          font-size: 0.7rem;
+        }
+        span {
+          font-size: 0.55rem;
+        }
+        p {
+          font-size: 0.45rem;
+        }
+      }
+    }
+  }
+
+  /* Medium Screens (md: 481px - 768px) */
+  @media (max-width: 768px) {
+    font-size: 0.6rem;
+
+    .widget-glass {
+      padding: 0.3rem;
+    }
+
+    .city-input {
+      font-size: 0.55rem;
+      padding: 3px;
+    }
+
+    .weather-header h3 {
+      font-size: 0.7rem;
+    }
+
+    .weather-header .current-time {
+      font-size: 0.45rem;
+    }
+
+    .current-weather .main-info {
+      .wi {
+        font-size: 1.2rem;
+      }
+      h2 {
+        font-size: 1rem;
+      }
+      .desc {
+        font-size: 0.6rem;
+      }
+      .feels-like {
+        font-size: 0.5rem;
+      }
+    }
+
+    .detailed-info {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+      font-size: 0.5rem;
+
+      .info-item {
+        .wi {
+          font-size: 0.65rem;
+        }
+        span {
+          font-size: 0.5rem;
+        }
+        p {
+          font-size: 0.4rem;
+        }
+      }
+    }
+  }
+
+  /* Small Screens (sm: <480px) */
+  @media (max-width: 480px) {
+    font-size: 0.55rem;
+
+    .widget-glass {
+      padding: 0.25rem;
+    }
+
+    .city-input {
+      font-size: 0.5rem;
+      padding: 3px;
+    }
+
+    .weather-header h3 {
+      font-size: 0.65rem;
+    }
+
+    .weather-header .current-time {
+      font-size: 0.4rem;
+    }
+
+    .current-weather .main-info {
+      .wi {
+        font-size: 1rem;
+      }
+      h2 {
+        font-size: 0.9rem;
+      }
+      .desc {
+        font-size: 0.5rem;
+      }
+      .feels-like {
+        font-size: 0.45rem;
+      }
+    }
+
+    .detailed-info {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns to save space */
+      font-size: 0.45rem;
+
+      .info-item {
+        .wi {
+          font-size: 0.55rem;
+        }
+        span {
+          font-size: 0.45rem;
+        }
+        p {
+          font-size: 0.35rem;
+        }
+      }
+    }
+  }
+
+  /* Extra Small Screens (xs: <360px) */
+  @media (max-width: 360px) {
+    font-size: 0.5rem;
+
+    .widget-glass {
+      padding: 0.2rem;
+    }
+
+    .city-input {
+      font-size: 0.45rem;
+      padding: 2px;
+    }
+
+    .weather-header h3 {
+      font-size: 0.6rem;
+    }
+
+    .weather-header .current-time {
+      font-size: 0.35rem;
+    }
+
+    .current-weather .main-info {
+      .wi {
+        font-size: 0.9rem;
+      }
+      h2 {
+        font-size: 0.8rem;
+      }
+      .desc {
+        font-size: 0.45rem;
+      }
+      .feels-like {
+        font-size: 0.4rem;
+      }
+    }
+
+    .detailed-info {
+      grid-template-columns: 1fr; /* Single column to save vertical space */
+      font-size: 0.4rem;
+
+      .info-item {
+        .wi {
+          font-size: 0.5rem;
+        }
+        span {
+          font-size: 0.4rem;
+        }
+        p {
+          font-size: 0.35rem;
+        }
+      }
+    }
+  }
+}
