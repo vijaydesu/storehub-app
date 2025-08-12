@@ -1,6 +1,7 @@
 {
   "name": "cloudflare-vite-storebot",
   "compatibility_date": "2025-08-06",
+  "main": "src/index.ts",
   "assets": {
     "not_found_handling": "single-page-application"
   }
