@@ -1,5 +1,5 @@
 {
-  "name": "cloudflare-vite-storebot",
+  "name": "storehub-app",
   "compatibility_date": "2025-08-06",
    "main": "./worker/index.ts",
   "assets": {
