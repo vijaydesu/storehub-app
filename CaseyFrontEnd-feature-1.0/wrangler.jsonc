@@ -1,5 +1,5 @@
 {
-  "name": "storehub-app",
+  "name": "storebotapp",
   "compatibility_date": "2025-08-06",
    "main": "./worker/index.ts",
   "assets": {
