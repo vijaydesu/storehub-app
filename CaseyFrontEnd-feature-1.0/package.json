@@ -2,7 +2,7 @@
   "name": "casey-chatbot",
   "version": "0.1.0",
   "private": true,
-   "type": "module",
+  "type": "module",
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
     "@testing-library/dom": "^10.4.0",
@@ -55,6 +55,7 @@
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.11.3",
+    "@cloudflare/workers-types": "^4.20250812.0",
     "@vitejs/plugin-react": "^4.7.0",
     "vite": "^6.3.5",
     "wrangler": "^4.29.0"
